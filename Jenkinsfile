@@ -3,19 +3,13 @@ pipeline {
 
     stages {
 
-        stage('Clone Repo') {
-            steps {
-                git 'https://github.com/bijeshgithub/devops-cicd-pipeline.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t devops-cicd-pipeline .'
             }
         }
 
-        stage('List Images') {
+        stage('List Docker Images') {
             steps {
                 sh 'docker images'
             }
