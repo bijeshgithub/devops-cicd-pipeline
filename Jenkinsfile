@@ -11,7 +11,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t devops-pipeline .'
+                sh 'docker build -t devops-cicd-pipeline .'
             }
         }
 
