@@ -1,28 +1,21 @@
-apiversion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: devops-cicd-deployment
- spec: 
-    replicas: 
-        min replicas: 2
-        max replicas: 3
-    selector:
-     matchLabels:
+  name: devops-cicd-deployment
+  labels:
+    app: devops-cicd
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
       app: devops-cicd
-    template:
-     metadata:
+  template:
+    metadata:
       labels:
         app: devops-cicd
-     spec: 
-      container:
-      -name: devops-cicd-pipeline
-       image: kashyapdockerhub/devops-cicd-pipeline:latest
-       ports:
-       - containerPort: 80
-        
-        
-       
-      
-    
-    
-    
+    spec:
+      containers:
+      - name: devops-cicd-container
+        image: kashyapdockerhub/devops-cicd-pipeline:latest
+        ports:
+        - containerPort: 80
