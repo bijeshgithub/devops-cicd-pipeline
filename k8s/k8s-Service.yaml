@@ -1,0 +1,13 @@
+apiversion: v1
+kind: service
+metadata:
+  name: devops-cicd-service
+spec:
+  type: Nodeport
+  selector:
+       app: devops-cicd
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30007
+   
