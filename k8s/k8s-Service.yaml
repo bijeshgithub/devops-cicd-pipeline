@@ -1,9 +1,9 @@
 apiversion: v1
-kind: service
+kind: Service
 metadata:
   name: devops-cicd-service
 spec:
-  type: Nodeport
+  type: NodePort
   selector:
        app: devops-cicd
   ports:
